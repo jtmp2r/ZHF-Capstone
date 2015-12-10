@@ -9,6 +9,10 @@ app.config(['$routeProvider', function ($routeProvider) {
   .when('/welcome', {
   	templateUrl: 'partials/welcome.html'
   })
+  .when('/survey', {
+  	templateUrl: 'partials/survey.html'
+  	controller: 'infoCtrl'
+  })
 
 }]);
 

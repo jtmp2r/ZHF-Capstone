@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<div ng-include=" '/partials/navbar.html' "></div>
+
 <html>
 <head>
   <h1>Answer a few questions</h1>
@@ -22,12 +23,19 @@
 		  <input type="text" class='form-control' />
 		</div>
 		<div>
-		  <label>5. Would you prefer to workout at home or in a gym? "Your preference is important for me to develop a quality program based around you specifically.)</label>
+		  <label>5. Would you prefer to workout at home or in a gym? Your preference is important for me to develop a program based for you and only you.</label>
 		  <input type="text" class='form-control' />
 		</div>
 		<div>
 		  <label>6. What is the maximum amount of days per week you can realistically devote to exercising? What is the minimum number of days you will attend? What are your best days for exercise?</label>
-		  <input type="text" class='form-control' />
+		  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="#">1-2</a></li>
+    <li><a href="#">3-4</a></li>
+    <li><a href="#">5 or more</a></li>
+  </ul>
 		</div>
 		<div>
 		  <label>7. What is your current job and its everyday duties? Is it physically challenging for you?</label>
@@ -54,9 +62,12 @@
 		</div>
 		  <button type="submit" class="btn btn-danger">Submit</button>
   </div>
-  <div>
+  <div class="form-group">
   	<h3>Biometric Measurements</h3>
     <label>Weight</label>
+    <input type="text" class='form-control' />
+    <label>Height</label>
+    <input type="text" class='form-control' />
     
 
   </div>
