@@ -10,7 +10,7 @@ app.config(['$routeProvider', function ($routeProvider) {
   	templateUrl: 'partials/welcome.html'
   })
   .when('/survey', {
-  	templateUrl: 'partials/survey.html'
+  	templateUrl: 'partials/survey.html',
   	controller: 'infoCtrl'
   })
 
