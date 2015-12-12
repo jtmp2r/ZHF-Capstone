@@ -1,5 +1,5 @@
-app.controller('infoCtrl', ['$scope', '$location', 'register', '$firebaseArray', "$rootScope", 
-	function($scope, $location, register, $firebaseArray, $rootScope) {
+app.controller('infoCtrl', ['$scope', '$location', '$firebaseArray', '$rootScope', 
+	function($scope, $location, $firebaseArray, $rootScope) {
 
 
 	var userSurveyInfo = new Firebase('https://capstone-zhf.firebaseio.com/' + $rootScope.user.uid);

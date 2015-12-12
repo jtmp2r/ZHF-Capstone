@@ -25,6 +25,9 @@
           </ul>
         </li>
       </ul>
+      <span ng-show="authData">
+        {{ authData.name }} | <a href="#" ng-click="authObj.$unauth()">Logout</a>
+      </span>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>

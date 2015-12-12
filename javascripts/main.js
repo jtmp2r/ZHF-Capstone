@@ -16,5 +16,13 @@ app.config(['$routeProvider', function ($routeProvider) {
 
 }]);
 
-app.controller('mainPageCtrl', ['$scope', '$location', "Auth", function($scope, $location, Auth) {
+app.controller('mainCtrl', ['$scope', '$location', "Auth", '$firebaseAuth', function($scope, $location, Auth, $firebaseAuth) {
+  
+$scope.logout = function() {
+  var ref = new Firebase('https://capstone-zhf.firebaseio.com/');
+  $scope.authObj = $firebaseAuth(ref);  
+  authObj.$unauth()
+  $location.path('/login');
+  }
+
 }]);
