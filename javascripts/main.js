@@ -11,7 +11,7 @@ app.config(['$routeProvider', function ($routeProvider) {
   })
   .when('/survey', {
   	templateUrl: 'partials/survey.html',
-  	controller: 'infoCtrl'
+  	controller: 'infoCtrl as infoCtrl'
   })
 
 }]);
