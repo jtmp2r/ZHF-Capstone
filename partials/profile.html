@@ -1,0 +1,32 @@
+<div ng-include=" '/partials/navbar.html' "></div>
+
+<div class="container">
+  <div class="row">
+	  <div class="col-sm-8">
+	    <div class='panel panel-info'>
+	      <div class="panel-heading">
+	        <h3 class="panel-title">User Proile Name</h3>
+	      </div>
+	      <div>
+			    <table>
+			    	<tr ng-repeat="info in infolist">
+			    	  <td>Goal: {{ info.q1 }}</td>
+
+			    	</tr>
+			    </table>
+		  </div>
+	  </div>
+  </div>
+    <div class="row">
+      <div class="col-sm-4">
+      	<table>
+      		<tr ng-repeat="info in infolist">
+      		  <td>Weight: {{ info.weight }} </td>
+      		  <td>Weight: {{ info.height }} </td>
+      		</tr>
+      	</table>
+      </div>
+  	</div>
+  </div>
+	
+</div>
