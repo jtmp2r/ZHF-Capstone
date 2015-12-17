@@ -1,19 +1,27 @@
-app.controller('infoCtrl', ['$scope', '$location', '$firebaseObject', '$rootScope', 
+app.controller('profileCtrl', ['$scope', '$location', '$firebaseObject', '$rootScope', 
 	function($scope, $location, $firebaseObject, $rootScope) {
 
   // var ref = new Firebase('https://capstone-zhf.firebaseio.com');
   // var authData = ref.getAuth();
   // var userId = authData.uid;
 
-	var ref = new Firebase('https://capstone-zhf.firebaseio.com/'+$rootScope.user.uid+'/surveyInfo');
+	var ref = new Firebase('https://capstone-zhf.firebaseio.com/' + $rootScope.user.uid);
 
-	// var syncObject = $firebaseObject(ref);
+
+
+	$scope.syncObject = $firebaseObject(ref.child("surveyInfo"));
+
+	$scope.syncObject.$loaded().then(function() {
+	  console.log($scope.syncObject.q1); // "bar"
+  });
+
+
   // syncObject.$bindTo($scope, "syncObject");
 
-	// this.newInfo = {};
-
+	this.newInfo = {};
+  
 	this.addInfo = function() {
-		ref.set({
+		this.infoList.$add({
 			q1: this.newInfo.q1,
 			q2: this.newInfo.q2,
 			q3: this.newInfo.q3,
@@ -26,12 +34,16 @@ app.controller('infoCtrl', ['$scope', '$location', '$firebaseObject', '$rootScop
 			q10: this.newInfo.q10,
 			weight: this.newInfo.weight,
 			height: this.newInfo.height,
-			userId: $rootScope.user.uid
-		});
-	}
+		}).then(function(data) {
+			console.log(data);
+		})
+
+		}
   
 
 }]);	
+
+
 
 
 // + $rootScope.user.uid

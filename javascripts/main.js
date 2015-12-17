@@ -13,8 +13,29 @@ app.config(['$routeProvider', function ($routeProvider) {
   	templateUrl: 'partials/survey.html',
   	controller: 'infoCtrl as infoCtrl'
   })
+  .when('/profile', {
+    templateUrl: 'partials/profile.html',
+    controller: 'profileCtrl as profile'
+  })
 
 }]);
+
+
+app.run(["$location", "$rootScope", function ($location, $rootScope) {
+  var ref = new Firebase("https://capstone-zhf.firebaseio.com");
+
+  ref.onAuth(function(authData) {
+    if (authData) {
+      console.log("Authenticated with uid:", authData.uid);
+      $location.url("/profile");
+      $rootScope.user = authData;
+    } else {
+      console.log("Client unauthenticated.");
+      $location.url("/");
+    }
+  });
+}]);
+
 
 app.controller('mainCtrl', ['$scope', '$location', "Auth", '$firebaseAuth', function($scope, $location, Auth, $firebaseAuth) {
   
