@@ -26,12 +26,13 @@ app.controller('infoCtrl', ['$scope', '$location', '$firebaseObject', '$rootScop
 			q10: this.newInfo.q10,
 			weight: this.newInfo.weight,
 			height: this.newInfo.height,
+			name: this.newInfo.name,
 			userId: $rootScope.user.uid
 		});
+		$location.url('/profile')
 	}
   
 
 }]);	
 
 
-// + $rootScope.user.uid

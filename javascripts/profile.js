@@ -12,7 +12,7 @@ app.controller('profileCtrl', ['$scope', '$location', '$firebaseObject', '$rootS
 	$scope.syncObject = $firebaseObject(ref.child("surveyInfo"));
 
 	$scope.syncObject.$loaded().then(function() {
-	  console.log($scope.syncObject.q1); // "bar"
+	  console.log($scope.syncObject); // "bar"
   });
 
 
@@ -34,6 +34,7 @@ app.controller('profileCtrl', ['$scope', '$location', '$firebaseObject', '$rootS
 			q10: this.newInfo.q10,
 			weight: this.newInfo.weight,
 			height: this.newInfo.height,
+			name: this.newInfo.name,
 		}).then(function(data) {
 			console.log(data);
 		})

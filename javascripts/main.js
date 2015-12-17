@@ -17,6 +17,7 @@ app.config(['$routeProvider', function ($routeProvider) {
     templateUrl: 'partials/profile.html',
     controller: 'profileCtrl as profile'
   })
+  .otherwise({redirectTo: '/'})
 
 }]);
 
@@ -37,13 +38,13 @@ app.run(["$location", "$rootScope", function ($location, $rootScope) {
 }]);
 
 
-app.controller('mainCtrl', ['$scope', '$location', "Auth", '$firebaseAuth', function($scope, $location, Auth, $firebaseAuth) {
+app.controller('mainCtrl', ['$scope', '$location', '$firebaseAuth',  function($scope, $location, $firebaseAuth) {
   
-$scope.logout = function() {
-  var ref = new Firebase('https://capstone-zhf.firebaseio.com/');
-  $scope.authObj = $firebaseAuth(ref);  
-  authObj.$unauth()
-  $location.path('/login');
-  }
+// $scope.logout = function() {
+//   var ref = new Firebase('https://capstone-zhf.firebaseio.com/');
+//   $scope.authObj = $firebaseAuth(ref);  
+//   authObj.$unauth()
+//   $location.path('/login');
+//   }
 
 }]);

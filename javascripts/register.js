@@ -13,6 +13,14 @@ app.controller('authCtrl', ['$scope', '$location', '$firebaseAuth', '$rootScope'
 		});
 		$location.path('/welcome')
 	}
+
+	$scope.logout = function() {
+	  var ref = new Firebase('https://capstone-zhf.firebaseio.com/');
+	  var authObj = $firebaseAuth(ref);  
+	  console.log(authObj)
+	  authObj.$unauth();
+	  	$location.path('/');
+  }
 }]);
 		// Auth.$authWithOAuthPopup("google").then(function(authData) {
 	 //    console.log("Logged in as:", authData.uid);
