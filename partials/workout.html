@@ -1,3 +1,4 @@
+<div ng-include=" '/partials/navbar.html' "></div>
 
 <html>
 <head>
@@ -15,14 +16,11 @@
 		<label>Intensity</label>
 		  <input type="text" class='form-control' ng-model='infoCtrl.newInfo.intensity'/>
 		</div>    
-    </div>
     <div> 
-		  <label>Reps</label>
+		  <label>Sets</label>
 		  <input type="text" class='form-control' ng-model='infoCtrl.newInfo.reps'/>
+		  <button type="submit" ang-click="infoCtrl.addInfo()" class="btn btn-danger"><a href="#/profile">Submit</a></button>
 		</div>
-		<div> 
-		  <label></label>
-		  <input type="text" class='form-control' ng-model='infoCtrl.newInfo.focus'/>
-		</div>
+	</div>	
 </body>
 </html>

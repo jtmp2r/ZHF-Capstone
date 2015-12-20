@@ -32,11 +32,9 @@ app.run(["$location", "$rootScope", function ($location, $rootScope) {
   ref.onAuth(function(authData) {
     if (authData) {
       console.log("Authenticated with uid:", authData.uid);
-      $location.url("/profile");
       $rootScope.user = authData;
     } else {
       console.log("Client unauthenticated.");
-      $location.url("/");
     }
   });
 }]);
