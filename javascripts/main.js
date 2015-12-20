@@ -17,6 +17,10 @@ app.config(['$routeProvider', function ($routeProvider) {
     templateUrl: 'partials/profile.html',
     controller: 'profileCtrl as profile'
   })
+  .when('/workout', {
+    templateUrl: 'partials/workout.html',
+    controller: 'profileCtrl as profile'
+  })
   .otherwise({redirectTo: '/'})
 
 }]);

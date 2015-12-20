@@ -35,6 +35,10 @@ app.controller('profileCtrl', ['$scope', '$location', '$firebaseObject', '$rootS
 			weight: this.newInfo.weight,
 			height: this.newInfo.height,
 			name: this.newInfo.name,
+			volume: this.newInfo.volume,
+			intensity: this.newInfo.intensity,
+			reps: this.newInfo.reps,
+			userId: $rootScope.user.uid
 		}).then(function(data) {
 			console.log(data);
 		})

@@ -27,6 +27,9 @@ app.controller('infoCtrl', ['$scope', '$location', '$firebaseObject', '$rootScop
 			weight: this.newInfo.weight,
 			height: this.newInfo.height,
 			name: this.newInfo.name,
+			volume: this.newInfo.volume,
+			intensity: this.newInfo.intensity,
+			reps: this.newInfo.reps,
 			userId: $rootScope.user.uid
 		});
 		$location.url('/profile')
