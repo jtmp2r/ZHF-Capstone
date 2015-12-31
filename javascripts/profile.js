@@ -5,6 +5,7 @@ app.controller('profileCtrl', ['$scope', '$location', '$firebaseObject', '$rootS
   // var authData = ref.getAuth();
   // var userId = authData.uid;
 
+
 	var ref = new Firebase('https://capstone-zhf.firebaseio.com/' + $rootScope.user.uid);
 
 
@@ -15,8 +16,6 @@ app.controller('profileCtrl', ['$scope', '$location', '$firebaseObject', '$rootS
 	  console.log($scope.syncObject); // "bar"
   });
 
-
-  // syncObject.$bindTo($scope, "syncObject");
 
 	this.newInfo = {};
   
@@ -44,6 +43,18 @@ app.controller('profileCtrl', ['$scope', '$location', '$firebaseObject', '$rootS
 		})
 
 		}
+
+
+  
+	this.moreInfo = function() {
+		ref.set({
+			volume: this.newInfo.volume,
+			intensity: this.newInfo.intensity,
+			reps: this.newInfo.reps
+		}).then(function(data) {
+			console.log(data);
+		})
+	}
   
 
 }]);	
