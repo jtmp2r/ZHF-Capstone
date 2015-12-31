@@ -3,20 +3,6 @@ app.controller('authCtrl', ['$scope', '$location', '$firebaseAuth', '$rootScope'
     var ref = new Firebase('https://capstone-zhf.firebaseio.com/');
     $scope.authObj = $firebaseAuth(ref);
 
-	$scope.createUser = function() {
-		$scope.message = null;
-		$scope.error = null;
-		console.log("Hell Yeah!!");
-
-		Auth.$createUser({
-			email: $scope.email,
-			password: $scope.password
-		}).then(function(userData) {
-			console.log("User " + userData.uid + " created successfully!");
-		}).catch(function(error) {
-			console.log(error);
-		});
-	}; //end register
 
  
 	$scope.googleLogin = function() {
