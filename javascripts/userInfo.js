@@ -1,23 +1,16 @@
-app.controller('infoCtrl', ['$scope', '$location', '$firebaseObject', '$rootScope', 
-	function($scope, $location, $firebaseObject, $rootScope) {
+app.controller('infoCtrl', ['$scope', '$location', '$firebaseArray', 'Auth', 
+	function($scope, $location, $firebaseArray, Auth) {
 
   // var ref = new Firebase('https://capstone-zhf.firebaseio.com');
   // var authData = ref.getAuth();
   // var userId = authData.uid;
 
-	var ref = new Firebase('https://capstone-zhf.firebaseio.com/'+ $rootScope.user.uid +'/surveyInfo');
+	var ref = new Firebase('https://capstone-zhf.firebaseio.com/' + this.userAuthData.uid + '/surveyInfo');
 
-
-	$scope.syncObject = $firebaseObject(ref.child("surveyInfo"));
-
-	$scope.syncObject.$loaded().then(function() {
-	  console.log($scope.syncObject); // "bar"
-  });
-  
   var newInfo = {};
 
     this.addInfo = function() {
-        ref.set({
+        this.syncObject.$add({
             q1: this.newInfo.q1,
             q2: this.newInfo.q2,
             q3: this.newInfo.q3,
@@ -31,7 +24,6 @@ app.controller('infoCtrl', ['$scope', '$location', '$firebaseObject', '$rootScop
             weight: this.newInfo.weight,
             height: this.newInfo.height,
             name: this.newInfo.name,
-            userId: $rootScope.user.uid
         });
     }.bind(this);
 

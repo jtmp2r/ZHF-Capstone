@@ -2,39 +2,33 @@
 
 <html>
 <head>
-  <h1>ZHF Online Personal Training</h1>
-  <br />
-  <h2>Contact Details</h2>
+  <h1>Answer a few questions</h1>
 </head>
 <body>
   <div class="form-group">
-  <div> 
-		  <label>Name that you go by?</label>
-		  <input type="text" class='form-control' ng-model='infoCtrl.syncObject.name'/>
-		</div>  
     <div> 
 		  <label>1. What are your goals that I can help you with? i.e. lose weight, get stronger, etc</label>
-		  <input type="text" class='form-control' ng-model='infoCtrl.syncObject.q1'/>
+		  <input type="text" class='form-control' ng-model='infoCtrl.newInfo.q1'/>
 		</div>  
 		<div>
 		  <label>2. Have you ever tried online personal training in the past?</label>
-		  <input type="text" class='form-control' ng-model='infoCtrl.syncObject.q2'/>
+		  <input type="text" class='form-control' ng-model='infoCtrl.newInfo.q2'/>
 		</div>
 		<div>  
 		  <label>3. If active, what is your current activity level or workout plan? Days per week spent exercising?</label>
-		  <input type="text" class='form-control' ng-model='infoCtrl.syncObject.q3'/>
+		  <input type="text" class='form-control' ng-model='infoCtrl.newInfo.q3'/>
 		</div>
 		<div>
 		  <label>4. Do you have any current/past injuries? Medical Issues? Have you seen a doctor?</label>
-		  <input type="text" class='form-control' ng-model='infoCtrl.syncObject.q4'/>
+		  <input type="text" class='form-control' ng-model='infoCtrl.newInfo.q4'/>
 		</div>
 		<div>
 		  <label>5. Would you prefer to workout at home or in a gym? Your preference is important for me to develop a program based for you and only you.</label>
-		  <input type="text" class='form-control' ng-model='infoCtrl.syncObject.q5'/>
+		  <input type="text" class='form-control' ng-model='infoCtrl.newInfo.q5'/>
 		</div>
 		<div>
 		  <label for='sel2'>6. What is the maximum amount of days per week you can realistically devote to exercising? What is the minimum number of days you will attend? What are your best days for exercise?</label>
-		  <select class="form-control" id="sel2" ng-model='infoCtrl.syncObject.q6'>
+		  <select class="form-control" id="sel2" ng-model='infoCtrl.newInfo.q6'>
     <option>0</option>
     <option>1-2</option>
     <option>3-4</option>
@@ -43,11 +37,11 @@
 		</div>
 		<div>
 		  <label>7. What is your current job and its everyday duties? Is it physically challenging for you?</label>
-		  <input type="text" class='form-control' ng-model='infoCtrl.syncObject.q7'>
+		  <input type="text" class='form-control' ng-model='infoCtrl.newInfo.q7'>
 		</div>
 		<div class='form-group'>
 		  <label for='sel1'>8. How much time do you spend in front of a screen (tv, computer, etc) everyday?</label>
-	  <select class="form-control" id="sel1" ng-model='infoCtrl.syncObject.q8'>
+	  <select class="form-control" id="sel1" ng-model='infoCtrl.newInfo.q8'>
     <option>0</option>
     <option>1-2</option>
     <option>3-4</option>
@@ -57,21 +51,25 @@
 		</div>
 		<div>
 		  <label>9. What is your regular bedtime and wake up time?</label>
-		  <input type="text" class='form-control' ng-model='infoCtrl.syncObject.q9'/>
+		  <input type="text" class='form-control' ng-model='infoCtrl.newInfo.q9'/>
 		</div>
 		<div>
 		  <label>10. Are there any other facts  you wish to share?</label>
-		  <input type="text" class='form-control' ng-model='infoCtrl.syncObject.q10'/>
+		  <input type="text" class='form-control' ng-model='infoCtrl.newInfo.q10'/>
 		</div>
   </div>
   <div class="form-group">
   	<h3>Biometric Measurements</h3>
     <label>Weight</label>
-    <input type="text" class='form-control' ng-model='infoCtrl.syncObject.weight'/>
+    <input type="text" class='form-control' ng-model='infoCtrl.newInfo.weight'/>
     <label>Height</label>
-    <input type="text" class='form-control' ng-model='infoCtrl.syncObject.height'/>    
-		<button type="submit" ng-click="infoCtrl.addInfo()" class="btn btn-danger"><a href="#/profile">Submit</a></button>
+    <input type="text" class='form-control' ng-model='infoCtrl.newInfo.height'/>    
+		<button type="submit" ng-click="infoCtrl.addInfo()" class="btn btn-danger"><a href="#/profile">Submit</a></button>Submit</button>
   </div>
+  
+</body>
+</html><a href="#/profile">Submit</a></button>
+  
   
 </body>
 </html>

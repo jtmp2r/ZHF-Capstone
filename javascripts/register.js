@@ -1,17 +1,16 @@
-app.controller('authCtrl', ['$scope', '$location', '$firebaseAuth', "$rootScope", 'Auth',
-	function($scope, $location, $firebaseAuth, $rootScope, Auth) {
-
-	 var ref = new Firebase('https://capstone-zhf.firebaseio.com/');
-   $scope.authObj = $firebaseAuth(ref);	
+app.controller('authCtrl', ['$scope', '$location', '$firebaseAuth', "Auth",
+	function($scope, $location, $firebaseAuth, Auth) {
+   
 
   $scope.createUser = function() {
 		$scope.message = null;
 		$scope.error = null;
 		console.log("Working");
 
+
 		Auth.$createUser({
-			email: $scope.email,
-			password: $scope.password
+			email: "$scope.email",
+			password: "$scope.password"
 		}).then(function(userData) {
 			console.log("User " + userData.uid + " created successfully!");
 		}).catch(function(error) {
@@ -19,16 +18,19 @@ app.controller('authCtrl', ['$scope', '$location', '$firebaseAuth', "$rootScope"
 		});
 	}; //end register
 
- 
-	$scope.googleLogin = function() {
-		$scope.authObj.$authWithOAuthPopup("google").then(function(authData) {
-	  console.log("Logged in as:", authData.uid);
-	  // $rootScope.user = authData;
+	$scope.logIn = function(){
+		Auth.$authWithPassword({
+			email: "$scope.email",
+			password: "$scope.password"
+		}).then(function(authData) {
+			console.log("User: ", Auth.$authWithPassword);
+			$location.url('/welcome');
 		}).catch(function(error) {
-		  console.error("Authentication failed:", error);
+			console.error("Something's amiss:", error);
 		});
-		$location.path('/welcome')
-	}
+	}; // login
+
+ 
 
 	$scope.logout = function() {
 	  var ref = new Firebase('https://capstone-zhf.firebaseio.com/');
@@ -40,11 +42,10 @@ app.controller('authCtrl', ['$scope', '$location', '$firebaseAuth', "$rootScope"
 }]);
  
 
-
 	// $scope.googleLogin = function() {
 	// 	$scope.authObj.$authWithOAuthPopup("google").then(function(authData) {
 	//   console.log("Logged in as:", authData.uid);
-	//   $rootScope.user = authData.uid;
+	//   // $rootScope.user = authData;
 	// 	}).catch(function(error) {
 	// 	  console.error("Authentication failed:", error);
 	// 	});

@@ -26,18 +26,18 @@ app.config(['$routeProvider', function ($routeProvider) {
 }]);
 
 
-  app.run(["$location", "$rootScope", function ($location, $rootScope) {
-    var ref = new Firebase("https://capstone-zhf.firebaseio.com");
+  // app.run(["$location", "$rootScope", function ($location, $rootScope) {
+  //   var ref = new Firebase("https://capstone-zhf.firebaseio.com");
 
-    ref.onAuth(function(authData) {
-      if (authData) {
-        console.log("Authenticated with uid:", authData.uid);
-        $rootScope.user = authData;
-      } else {
-        console.log("Client unauthenticated.");
-      }
-    });
-  }]);
+  //   ref.onAuth(function(authData) {
+  //     if (authData) {
+  //       console.log("Authenticated with uid:", authData.uid);
+  //       $rootScope.user = authData;
+  //     } else {
+  //       console.log("Client unauthenticated.");
+  //     }
+  //   });
+  // }]);
 
 
 app.controller('mainCtrl', ['$scope', '$location', '$firebaseAuth',  function($scope, $location, $firebaseAuth) {
