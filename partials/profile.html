@@ -1,27 +1,32 @@
 <div ng-include=" '/partials/navbar.html' "></div>
 
 <div class="container-fluid">
+  <div class='row'>
+    <div class='col-sm-3'>
+      
+    </div>
+  </div>
   <div class="row">
-	  <div class="col-sm-8">
+	  <div class="col-sm-6">
 	    <div class='panel panel-info'>
 	      <div class="panel-heading">
-	        <h3>{{ synObject.name }}</h3>
+	        <h3>{{ syncObject.name }}</h3>
 	      </div>
 	      <div>
 			    <table>
 			    	<tr >
 			    	  <td>Goal: {{ syncObject.q1 }}</td>
+			    	  <td>Frequency: {{ syncObject.frequency}}</td>
 			    	  <td>Volume: {{ syncObject.volume }}</td>
 			    	  <td>Intensity: {{ syncObject.intensity }}</td>
 			    	  <td>Sets: {{ syncObject.reps }}</td>
-			    	  <td>Frquency: {{ syncObject.frequency}}</td>
 			    	</tr>
 			    </table>
 		    </div>
 	    </div>
   </div>
     <div class="row">
-      <div class="col-sm-4">
+      <div class="col-sm-3">
       	<table>
       		  <td>Weight: {{ syncObject.weight }} </td>
       		  <br />

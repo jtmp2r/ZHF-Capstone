@@ -4,7 +4,7 @@ app.config(['$routeProvider', function ($routeProvider) {
   $routeProvider
   .when('/', {
     templateUrl: 'partials/login.html',
-    controller: 'authCtrl'
+    controller: 'authCtrl as authCtrl'
   })
   .when('/welcome', {
   	templateUrl: 'partials/welcome.html'
@@ -15,11 +15,11 @@ app.config(['$routeProvider', function ($routeProvider) {
   })
   .when('/profile', {
     templateUrl: 'partials/profile.html',
-    controller: 'profileCtrl as profile'
+    controller: 'profileCtrl as profileCtrl'
   })
   .when('/workout', {
     templateUrl: 'partials/workout.html',
-    controller: 'profileCtrl as profile'
+    controller: 'profileCtrl as profileCtrl'
   })
   .otherwise({redirectTo: '/'})
 

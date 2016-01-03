@@ -5,37 +5,39 @@ app.controller('infoCtrl', ['$scope', '$location', '$firebaseObject', '$rootScop
   // var authData = ref.getAuth();
   // var userId = authData.uid;
 
-	var ref = new Firebase('https://capstone-zhf.firebaseio.com/'+$rootScope.user.uid+'/surveyInfo');
+	var ref = new Firebase('https://capstone-zhf.firebaseio.com/'+ $rootScope.user.uid +'/surveyInfo');
 
 
+	$scope.syncObject = $firebaseObject(ref.child("surveyInfo"));
+
+	$scope.syncObject.$loaded().then(function() {
+	  console.log($scope.syncObject); // "bar"
+  });
+  
+  var newInfo = {};
 
 	this.addInfo = function() {
-		ref.set({
-			q1: this.newInfo.q1,
-			q2: this.newInfo.q2,
-			q3: this.newInfo.q3,
-			q4: this.newInfo.q4,
-			q5: this.newInfo.q5,
-			q6: this.newInfo.q6,
-			q7: this.newInfo.q7,
-			q8: this.newInfo.q8,
-			q9: this.newInfo.q9,
-			q10: this.newInfo.q10,
-			weight: this.newInfo.weight,
-			height: this.newInfo.height,
-			name: this.newInfo.name,
-			userId: $rootScope.user.uid
-		});
-		
-	}
+		this.syncObject.$add({
+			q1: newInfo.q1,
+			q2: newInfo.q2,
+			q3: newInfo.q3,
+			q4: newInfo.q4,
+			q5: newInfo.q5,
+			q6: newInfo.q6,
+			q7: newInfo.q7,
+			q8: newInfo.q8,
+			q9: newInfo.q9,
+			q10: newInfo.q10,
+			weight: newInfo.weight,
+			height: newInfo.height,
+			name: newInfo.name,
+			userId: userId
+		}).then(function(data) {
+			console.log(data);
+		}).bind(this);
 
-	this.moreInfo = function() {
-		ref.set({
-			volume: this.newInfo.volume,
-			intensity: this.newInfo.intensity,
-			reps: this.newInfo.reps
-		})
-	}
+		}
+
   
 
 }]);	
