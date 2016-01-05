@@ -19,7 +19,7 @@ app.config(['$routeProvider', function ($routeProvider) {
   })
   .when('/workout', {
     templateUrl: 'partials/workout.html',
-    controller: 'profileCtrl as profileCtrl'
+    controller: 'moreCtrl as moreCtrl'
   })
   .otherwise({redirectTo: '/'})
 

@@ -8,27 +8,27 @@ app.controller('profileCtrl', ['$scope', '$location', '$firebaseArray', "Auth",
 	this.syncObject = $firebaseArray(ref);
 
 
-
   var newInfo = {};
   
   
-this.addInfo = function() {
-		this.syncObject.$add({
-			q1: newInfo.q1,
-			q2: newInfo.q2,
-			q3: newInfo.q3,
-			q4: newInfo.q4,
-			q5: newInfo.q5,
-			q6: newInfo.q6,
-			q7: newInfo.q7,
-			q8: newInfo.q8,
-			q9: newInfo.q9,
-			q10: newInfo.q10,
-			weight: newInfo.weight,
-			height: newInfo.height,
-			name: newInfo.name,
-		})
-	  }.bind(this);
+    this.addInfo = function() {
+        this.syncObject.$add({
+            q1: this.newInfo.q1,
+            q2: this.newInfo.q2,
+            q3: this.newInfo.q3,
+            q4: this.newInfo.q4,
+            q5: this.newInfo.q5,
+            q6: this.newInfo.q6,
+            q7: this.newInfo.q7,
+            q8: this.newInfo.q8,
+            q9: this.newInfo.q9,
+            q10: this.newInfo.q10,
+            weight: this.newInfo.weight,
+            height: this.newInfo.height
+           
+        });
+    };
+
 
 
   

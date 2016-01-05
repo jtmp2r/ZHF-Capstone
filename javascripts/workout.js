@@ -1,4 +1,4 @@
-app.controller('infoCtrl', ['$scope', '$location', '$firebaseArray', 'Auth', 
+app.controller('moreCtrl', ['$scope', '$location', '$firebaseArray', 'Auth', 
 	function($scope, $location, $firebaseArray, Auth) {
 	
 
