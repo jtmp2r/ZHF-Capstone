@@ -5,19 +5,19 @@ app.controller('moreCtrl', ['$scope', '$location', '$firebaseArray', 'Auth',
 
 	this.userAuthData = Auth.$getAuth();
 
-	var ref = new Firebase('https://capstone-zhf.firebaseio.com/' + this.userAuthData.uid + '/surveyInfo');
+	var ref = new Firebase('https://capstone-zhf.firebaseio.com/' + this.userAuthData.uid + '/info');
 
-	vm.syncObject = $firebaseArray(ref);
+	vm.newObject = $firebaseArray(ref);
 
   var newInfo = {};
 
 	$scope.moreInfo = function() {
-		vm.syncObject.$add({
+		vm.newObject.$add({
 			volume: vm.newInfo.volume,
 			intensity: vm.newInfo.intensity,
 			reps: vm.newInfo.reps
-		})
-	}
+		});
+	};
 
 
 }]);	

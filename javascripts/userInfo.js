@@ -25,8 +25,11 @@ app.controller('infoCtrl', ['$scope', '$location', '$firebaseArray', 'Auth',
             q10: vm.newInfo.q10,
             weight: vm.newInfo.weight,
             height: vm.newInfo.height,
-            name: vm.newInfo.name
-
+            name: vm.newInfo.name,
+            volume: vm.newInfo.volume,
+            intensity: vm.newInfo.intensity,
+           reps: vm.newInfo.reps
+  
         });
     };
 

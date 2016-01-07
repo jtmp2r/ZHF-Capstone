@@ -67,8 +67,21 @@
     <label>Weight</label>
     <input type="text" class='form-control' ng-model='infoCtrl.newInfo.weight'/>
     <label>Height</label>
-    <input type="text" class='form-control' ng-model='infoCtrl.newInfo.height'/>    
-		<button type="submit" ng-click="addInfo()" class="btn btn-danger">submit</button>
+    <input type="text" class='form-control' ng-model='infoCtrl.newInfo.height'/>
+    
+  	<label>Frequency</label>
+		  <input type="text" class='form-control' ng-model='infoCtrl.newInfo.days'/>
+		</div>  
+		<label>Volume</label>
+		  <input type="text" class='form-control' ng-model='infoCtrl.newInfo.volume'/>
+		</div>  
+		<label>Intensity</label>
+		  <input type="text" class='form-control' ng-model='infoCtrl.newInfo.intensity'/>
+		</div>    
+    <div> 
+		  <label>Sets</label>
+		  <input type="text" class='form-control' ng-model='infoCtrl.newInfo.reps'/>    
+		<button type="submit" ng-click="addInfo()" class="btn btn-danger">Submit</button>
   </div>
   
 </body>
