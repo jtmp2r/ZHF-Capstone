@@ -10,13 +10,13 @@
 	  <div class="col-sm-6">
 	    <div class='panel panel-info'>
 	      <div class="panel-heading">
-	        <h3>{{ syncObject.name }}</h3>
+	        <h3 "info in infoCtrl.syncObject">{{ info.name }}</h3>
 	      </div>
 	      <div>
 			    <table>
-			    	<tr>
-			    	  <td>Goal: {{ syncObject.q1 }}</td>
-			    	  <td>Frequency: {{ syncObject.frequency}}</td>
+			    	<tr ng-repeat="info in infoCtrl.syncObject">
+			    	  <td>Goal: {{ info.q1 }}</td>
+			    	  <td>Frequency: {{ info.frequency }}</td>
 			    	  <td>Volume: {{ syncObject.volume }}</td>
 			    	  <td>Intensity: {{ syncObject.intensity }}</td>
 			    	  <td>Sets: {{ syncObject.reps }}</td>

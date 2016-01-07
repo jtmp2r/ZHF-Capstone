@@ -1,22 +1,21 @@
 app.controller('moreCtrl', ['$scope', '$location', '$firebaseArray', 'Auth', 
 	function($scope, $location, $firebaseArray, Auth) {
-	
+
+	vm = this;
 
 	this.userAuthData = Auth.$getAuth();
 
 	var ref = new Firebase('https://capstone-zhf.firebaseio.com/' + this.userAuthData.uid + '/surveyInfo');
 
-	this.syncObject = $firebaseArray(ref);
-	
+	vm.syncObject = $firebaseArray(ref);
 
   var newInfo = {};
 
-
-	this.moreInfo = function() {
-		this.syncObject.$add({
-			volume: this.newInfo.volume,
-			intensity: this.newInfo.intensity,
-			reps: this.newInfo.reps
+	$scope.moreInfo = function() {
+		vm.syncObject.$add({
+			volume: vm.newInfo.volume,
+			intensity: vm.newInfo.intensity,
+			reps: vm.newInfo.reps
 		})
 	}
 

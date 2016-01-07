@@ -6,6 +6,10 @@
 </head>
 <body>
   <div class="form-group">
+     <div> 
+		  <label> What is your name?</label>
+		  <input type="text" class='form-control' ng-model='infoCtrl.newInfo.name'/>
+		</div>  
     <div> 
 		  <label>1. What are your goals that I can help you with? i.e. lose weight, get stronger, etc</label>
 		  <input type="text" class='form-control' ng-model='infoCtrl.newInfo.q1'/>
@@ -64,7 +68,7 @@
     <input type="text" class='form-control' ng-model='infoCtrl.newInfo.weight'/>
     <label>Height</label>
     <input type="text" class='form-control' ng-model='infoCtrl.newInfo.height'/>    
-		<button type="submit" ng-click="addInfo()" class="btn btn-danger">Submit</button>
+		<button type="submit" ng-click="addInfo()" class="btn btn-danger">submit</button>
   </div>
   
 </body>

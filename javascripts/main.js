@@ -15,7 +15,7 @@ app.config(['$routeProvider', function ($routeProvider) {
   })
   .when('/profile', {
     templateUrl: 'partials/profile.html',
-    controller: 'profileCtrl as profileCtrl'
+    controller: 'infoCtrl as infoCtrl'
   })
   .when('/workout', {
     templateUrl: 'partials/workout.html',
