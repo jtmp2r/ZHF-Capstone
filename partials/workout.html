@@ -1,26 +1,16 @@
 <div ng-include=" '/partials/navbar.html' "></div>
 
-<html>
-<head>
+<div class="container">
+	<div class="col-sm-6 form-group">
+	  <label>Workout Outline:</label>
+	  <textarea class='form-control' rows="5" id='comment' ng-model="moreCtrl.moreInfo.w1"></textarea>
+	  <button type="submit" ng-click="addMore()" class="btn btn-danger">Submit</button>
 
-</head>
-<body>
-  <div>
-    <h2>Workout</h2>
-  	<label>Frequency</label>
-		  <input type="text" class='form-control' ng-model='infoCtrl.newInfo.days'/>
-		</div>  
-		<label>Volume</label>
-		  <input type="text" class='form-control' ng-model='infoCtrl.newInfo.volume'/>
-		</div>  
-		<label>Intensity</label>
-		  <input type="text" class='form-control' ng-model='infoCtrl.newInfo.intensity'/>
-		</div>    
-    <div> 
-		  <label>Sets</label>
-		  <input type="text" class='form-control' ng-model='infoCtrl.newInfo.reps'/>
-		  <button type="submit" ng-click="moreInfo()" class="btn btn-danger">Sumbit</button>
-		</div>
-	</div>	
-</body>
-</html>
+	  <table>
+		  <tr ng-repeat="more in moreCtrl.newObject">
+				<td class="panel-body">Weekly Workout: {{ more.w1 }}</td>
+			</tr>
+		</table>	
+		
+	</div>
+</div>

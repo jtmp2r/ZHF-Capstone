@@ -28,7 +28,7 @@ app.controller('infoCtrl', ['$scope', '$location', '$firebaseArray', 'Auth',
             name: vm.newInfo.name,
             volume: vm.newInfo.volume,
             intensity: vm.newInfo.intensity,
-           reps: vm.newInfo.reps
+            reps: vm.newInfo.reps
   
         });
     };
