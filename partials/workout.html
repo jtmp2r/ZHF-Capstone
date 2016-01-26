@@ -15,7 +15,10 @@
 	  <table "col-sm-6 off">
 		  <tr ng-repeat="(id, more) in moreCtrl.newObject">
 				<td class="panel-body">Weekly Workout: {{ more.w1 }}</td>
-			  <td><button ng-click="moreCtrl.newObject.$remove(id)">x</button></td>	
+			  <td>
+			  	<button ng-click="moreCtrl.newObject.$remove(id)">x</button>
+			  	<input ng-model="more.text" ng-change="moreCtrl.newObject.$save(more)" />
+			  </td>	
 			</tr>
 		</table>
 	</div>	

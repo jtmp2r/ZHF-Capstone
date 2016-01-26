@@ -19,6 +19,10 @@ app.controller('moreCtrl', ['$scope', '$location', '$firebaseArray', 'Auth',
     
     $scope.removeList = function(more) {
       vm.newObject.$remove(more);       
-    }  
+    }
 
+    
 }]);    
+
+
+
