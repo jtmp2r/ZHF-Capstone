@@ -20,18 +20,18 @@ app.controller('infoCtrl', ['$scope', '$location', '$firebaseArray', 'Auth',
             q5: vm.newInfo.q5,
             q6: vm.newInfo.q6,
             q7: vm.newInfo.q7,
-            q8: vm.newInfo.q8,
-            q9: vm.newInfo.q9,
-            q10: vm.newInfo.q10,
             weight: vm.newInfo.weight,
             height: vm.newInfo.height,
             name: vm.newInfo.name,
             volume: vm.newInfo.volume,
-            intensity: vm.newInfo.intensity,
-            reps: vm.newInfo.reps
-  
+            reps: vm.newInfo.reps  
         });
     };
+
+    $scope.removeEarning = function (more) {
+            $scope.earnings.$remove(more);       
+    }
+    
 
   
 

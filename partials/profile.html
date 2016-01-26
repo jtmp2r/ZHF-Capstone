@@ -11,6 +11,7 @@
 	      <div>
 			    <table>
 			    	<tr ng-repeat="info in infoCtrl.syncObject">
+			    	  <div ng-hide="editorEnabled">
 			    	  <td class="panel-body">Goal: {{ info.q1 }}</td>
 			    	</tr>
 			    	<tr ng-repeat="info in infoCtrl.syncObject">  
@@ -20,11 +21,14 @@
 			    	  <td class="panel-body">Volume: {{ info.volume }}</td>
 			    	</tr>
 			    	<tr ng-repeat="info in infoCtrl.syncObject">
-			    	  <td class="panel-body">Intensity: {{ info.intensity }}</td>
-			    	</tr>
-			    	<tr ng-repeat="info in infoCtrl.syncObject">
 			    	  <td class="panel-body">Sets: {{ info.reps }}</td>  
 			    	</tr>
+      					<a href="#" ng-click="editorEnabled=!editorEnabled">Edit title</a>
+    					</div>
+    					<div ng-show="editorEnabled">
+      					<input ng-model="title">
+      					<a href="#" ng-click="editorEnabled=!editorEnabled">Done editing?</a>
+              </div>
 			    </table>
 		    </div>
 	    </div>

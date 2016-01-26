@@ -13,12 +13,12 @@ app.controller('moreCtrl', ['$scope', '$location', '$firebaseArray', 'Auth',
 
     $scope.addMore = function() {
         vm.newObject.$add({
-          w1:  vm.moreInfo.w1
-        
-            
+          w1:  vm.moreInfo.w1            
         });
     };
-
-  
+    
+    $scope.removeList = function(more) {
+      vm.newObject.$remove(more);       
+    }  
 
 }]);    
