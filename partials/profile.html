@@ -1,7 +1,6 @@
 <div ng-include=" '/partials/navbar.html' "></div>
 
 <div class="container-fluid">
-  </div>
   <div class="row">
 	  <div class="col-sm-6">
 	    <div class='panel panel-info'>
@@ -11,7 +10,6 @@
 	      <div>
 			    <table>
 			    	<tr ng-repeat="info in infoCtrl.syncObject">
-			    	  <div ng-hide="editorEnabled">
 			    	  <td class="panel-body">Goal: {{ info.q1 }}</td>
 			    	</tr>
 			    	<tr ng-repeat="info in infoCtrl.syncObject">  
@@ -23,16 +21,10 @@
 			    	<tr ng-repeat="info in infoCtrl.syncObject">
 			    	  <td class="panel-body">Sets: {{ info.reps }}</td>  
 			    	</tr>
-      					<a href="#" ng-click="editorEnabled=!editorEnabled">Edit title</a>
-    					</div>
-    					<div ng-show="editorEnabled">
-      					<input ng-model="title">
-      					<a href="#" ng-click="editorEnabled=!editorEnabled">Done editing?</a>
-              </div>
 			    </table>
 		    </div>
 	    </div>
-  </div>
+  	</div>
     <div class="row">
       <div class="col-sm-3 panel panel-info">
         <div class="panel-heading">
