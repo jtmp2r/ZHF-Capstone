@@ -3,21 +3,42 @@
 <div class="container">
 	<div class="row">
 		<div class="col-sm-6 form-group">
-		  <label>Monday:</label>
-		  <textarea class='form-control' rows="5" id='comment' ng-model="moreCtrl.moreInfo.w1"></textarea>
-
+		  <div>
+			  <label>Workout Name:</label>
+			  <input class='form-control' rows="5" id='comment' ng-model="infoCtrl.moreInfo.w1"></input>
+			</div>
+			<div>
+			  <label>Description:</label>
+			  <input class='form-control' rows="5" id='description' ng-model="infoCtrl.moreInfo.w2"></input>
+			</div>
+			<div>
+			  <label for="days">Day of the Week:</label>
+			    <select class="form-control" id="days" ng-model="infoCtrl.moreInfo.w3">
+					  <option>Sunday</option>
+					  <option>Monday</option>
+					  <option>Tuesday</option>
+					  <option>Wednesday</option>
+					  <option>Thursday</option>
+					  <option>Friday</option>
+					  <option>Saturday</option>
+			    </select>
+			</div>
+		  <div>
+			  <label>Reps:</label>
+			  <input class='form-control' rows="5" id='comment' ng-model="infoCtrl.moreInfo.w4"></input>
+			</div>
 		  <button type="submit" ng-click="addMore()" class="btn btn-danger">Submit</button>
-	</div>
+	  </div>
 	</div>
 </div>
 <div class="container">
 	<div class="row">
 	  <table "col-sm-6 off">
-		  <tr ng-repeat="(id, more) in moreCtrl.newObject">
-				<td class="panel-body">Weekly Workout: {{ more.w1 }}</td>
+		  <tr ng-repeat="(id, info) in infoCtrl.syncObject">
+				<td class="panel-body">Weekly Workout: {{ info.w1 }}</td>
 			  <td>
-			  	<button ng-click="moreCtrl.newObject.$remove(id)">x</button>
-			  	<input ng-model="more.text" ng-change="moreCtrl.newObject.$save(more)" />
+			  	<button ng-click="infoCtrl.newObject.$remove(id)">x</button>
+			  	<input ng-model="more.text" ng-change="infoCtrl.syncObject.$save(more)" />
 			  </td>	
 			</tr>
 		</table>

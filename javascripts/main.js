@@ -19,8 +19,8 @@ app.config(['$routeProvider', function ($routeProvider) {
   })
   .when('/workout', {
     templateUrl: 'partials/workout.html',
-    controller: 'moreCtrl as moreCtrl'
-  })
+    controller: 'infoCtrl as infoCtrl'
+  }) 
   .otherwise({redirectTo: '/'})
 
 }]);
