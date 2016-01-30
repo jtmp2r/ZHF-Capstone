@@ -24,6 +24,7 @@ app.controller('infoCtrl', ['$scope', '$location', '$firebaseArray', 'Auth',
             height: vm.newInfo.height,
             name: vm.newInfo.name
         });
+        vm.newInfo = {};
     };
 
     $scope.addMore = function() {
@@ -33,41 +34,16 @@ app.controller('infoCtrl', ['$scope', '$location', '$firebaseArray', 'Auth',
           w3:  vm.moreInfo.w3,
           w4:  vm.moreInfo.w4             
         });
+        vm.moreInfo = {};
     };
 
-  
+    $scope.editInfo = function(info) {
+        vm.moreInfo = info;
+        vm.syncObject.$save(info);
+    };
 
 }]);	
 
 
-
-// app.controller('moreCtrl', ['$scope', '$location', '$firebaseArray', 'Auth', 
-//     function($scope, $location, $firebaseArray, Auth) {
-
-//     this.userAuthData = Auth.$getAuth();
-
-//   vm = this;
-//   var ref = new Firebase('https://capstone-zhf.firebaseio.com/' + this.userAuthData.uid + '/workout');
-
-//   vm.newObject = $firebaseArray(ref);
-
-
-//   var moreInfo = {};
-
-//     $scope.addMore = function() {
-//         vm.newObject.$add({
-//           w1:  vm.moreInfo.w1,
-//           w2:  vm.moreInfo.w2,
-//           w3:  vm.moreInfo.w3,
-//           w4:  vm.moreInfo.w4             
-//         });
-//     };
-    
-//     $scope.removeList = function(more) {
-//       vm.newObject.$remove(more);       
-//     }
-
-    
-// }]);    
 
 
