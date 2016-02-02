@@ -4,23 +4,17 @@
   <div class="row">
 	  <div class="col-sm-6">
 	    <div class='panel panel-info'>
-	      <div class="panel-heading"  ng-repeat="info in infoCtrl.syncObject">
+	      <div class="panel-heading" ng-repeat="info in infoCtrl.syncObject">
 	        <h3>{{ info.name }}</h3>
 	      </div>
 	      <div>
 			    <table>
 			    	<tr ng-repeat="info in infoCtrl.syncObject">
 			    	  <td class="panel-body">Goal: {{ info.q1 }}</td>
-			    	</tr>
-			    	<tr ng-repeat="info in infoCtrl.syncObject">  
-			    	  <td class="panel-body">Current Workout: {{ info.w2 }}</td>
-			    	</tr>
-			    	<tr ng-repeat="info in infoCtrl.syncObject">
-			    	  <td class="panel-body">Workout Day: {{ info.w3 }}</td>
-			    	</tr>
-			    	<tr ng-repeat="info in infoCtrl.syncObject">
+			    	  <td class="panel-body">Leg Day: {{ info.w2 }}</td>
 			    	  <td class="panel-body">Sets: {{ info.w4 }}</td>  
-			    	</tr>
+			        <button ng-click="editInfo(info)"><a href="#/survey">Edit</a></button>
+			      </tr>
 			    </table>
 		    </div>
 	    </div>

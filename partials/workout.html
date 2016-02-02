@@ -36,7 +36,8 @@
 	  <table "col-sm-6 off">
 		  <tr ng-repeat="(id, info) in infoCtrl.syncObject">
 			  <td class="panel-body">Workout Day: {{ info.w3 }}</td>
-				<td class="panel-body">Weekly Workout: {{ info.w1 }}</td>
+			  <td class="panel-body">{{ info.w2 }}</td>
+				<td class="panel-body">{{ info.w1 }}</td>
 			  <td>
 			  	<button ng-click="infoCtrl.syncObject.$remove(id)">x</button>
 			  </td>	
