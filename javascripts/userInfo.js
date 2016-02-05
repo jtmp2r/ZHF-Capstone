@@ -5,8 +5,6 @@ app.controller('infoCtrl', ['$scope', '$location', '$firebaseArray', 'Auth',
 
   vm = this;
   var ref = new Firebase('https://capstone-zhf.firebaseio.com/' + this.userAuthData.uid + '/surveyInfo');
-  ref.orderByChild('name').limitToLast(2).on("child_added", function(snapshot) {
-  });
 
   vm.syncObject = $firebaseArray(ref);
 
@@ -14,7 +12,7 @@ app.controller('infoCtrl', ['$scope', '$location', '$firebaseArray', 'Auth',
   var moreInfo = {};
 
     $scope.addInfo = function() {
-        vm.syncObject.update({
+        vm.syncObject.$add({
             q1: vm.newInfo.q1,
             q2: vm.newInfo.q2,
             q3: vm.newInfo.q3,
