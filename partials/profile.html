@@ -7,14 +7,19 @@
 	      <div class="panel-heading" ng-repeat="info in infoCtrl.syncObject">
 	        <h3>{{ info.name }}</h3>
 	      </div>
-	      <div>
+	      <div class="row">
 			    <table>
-			    	<tr ng-repeat="info in infoCtrl.syncObject">
-			    	  <td class="panel-body">Goal: {{ info.q1 }}</td>
-			    	  <td class="panel-body">Leg Day: {{ info.w2 }}</td>
-			    	  <td class="panel-body">Sets: {{ info.w4 }}</td>  
-			        <button ng-click="editInfo(info)"><a href="#/survey">Edit</a></button>
-			      </tr>
+			    	<tr ng-repeat="(id, info) in infoCtrl.syncObject">
+			    	  <td class="panel-body">Goal: {{ info.q1 }}</td>  
+			    	  <td class="panel-body">{{ info.q2 }}</td>
+			    	  <td class="panel-body">{{ info.q5 }}</td>
+			    	  <td>
+			    	    <button ng-click="editNew(info)">Edit</button>
+			    	  </td>
+			    	  <td>
+			    	  	<button ng-click="infoCtrl.syncObject.$remove(id)">x</button>
+			    	  </td>
+			    	</tr>
 			    </table>
 		    </div>
 	    </div>
