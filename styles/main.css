@@ -37,3 +37,8 @@ body {
     background-repeat: no-repeat;
     background-position: center;
 }
+
+#sign {
+	opacity: 0.5;
+	padding-right: 100px;
+}
