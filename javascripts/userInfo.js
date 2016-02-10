@@ -3,13 +3,10 @@ app.controller('infoCtrl', ['$scope', '$location', '$firebaseArray', 'Auth',
     this.userAuthData = Auth.$getAuth();
 
 
-  vm = this;
-  var ref = new Firebase('https://capstone-zhf.firebaseio.com/' + this.userAuthData.uid + '/surveyInfo');
+    vm = this;
+    var ref = new Firebase('https://capstone-zhf.firebaseio.com/' + this.userAuthData.uid + '/surveyInfo');
 
-  vm.syncObject = $firebaseArray(ref);
-
-  var newInfo = {};
-  var moreInfo = {};
+    vm.syncObject = $firebaseArray(ref);
 
     $scope.addInfo = function() {
         vm.syncObject.$add({
@@ -27,26 +24,22 @@ app.controller('infoCtrl', ['$scope', '$location', '$firebaseArray', 'Auth',
         vm.newInfo = {};
     };
 
-    $scope.addMore = function() {
-        vm.syncObject.$add({
-          w1:  vm.moreInfo.w1,
-          w2:  vm.moreInfo.w2,
-          w3:  vm.moreInfo.w3,
-          w4:  vm.moreInfo.w4             
-        });
-        vm.moreInfo = {};
+
+    $scope.edit = function(info) {
+        vm.editedInfo = info;
+        vm.changeInfo = angular.extend({}, vm.editedInfo);
     };
 
-    $scope.editInfo = function(info) {
-        vm.moreInfo = info;
+    $scope.saveEdit = function(info) {
+        vm.editedInfo = info;
         vm.syncObject.$save(info);
-    };
+    }
 
-    $scope.editNew = function(info) {
-        vm.newInfo = info;
-        vm.syncObject.$save(info);
-        $location.url('/surveyInfo');
-    };
+    // $scope.save = function(info) {  
+    //   vm.syncObject.$save(info);
+    //   vm.newInfo = {};
+    // }
+
 
 
     

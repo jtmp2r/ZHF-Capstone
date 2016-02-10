@@ -33,12 +33,13 @@
 }
 
 body {
-    background-image: url("");
-    background-repeat: no-repeat;
-    background-position: center;
+    background: #8c8c8c;
 }
 
 #sign {
-	opacity: 0.5;
 	padding-right: 100px;
+}
+
+#para {
+	padding-left: 50px;
 }

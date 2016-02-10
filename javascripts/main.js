@@ -1,4 +1,4 @@
-var app = angular.module("Capstone-ZHF", ['ngRoute', 'firebase']);
+var app = angular.module("Capstone-ZHF", ['ngRoute', 'firebase', "angular.filter"]);
 
 app.config(['$routeProvider', function ($routeProvider) {
   $routeProvider
@@ -19,7 +19,7 @@ app.config(['$routeProvider', function ($routeProvider) {
   })
   .when('/workout', {
     templateUrl: 'partials/workout.html',
-    controller: 'infoCtrl as infoCtrl'
+    controller: 'workCtrl as workCtrl'
   }) 
   .otherwise({redirectTo: '/'})
 

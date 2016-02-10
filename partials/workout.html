@@ -5,15 +5,15 @@
 		<div class="col-sm-6 form-group">
 		  <div>
 			  <label>Workout:</label>
-			  <input class='form-control' rows="5" id='comment' ng-model="infoCtrl.moreInfo.w1"></input>
+			  <input class='form-control' rows="5" id='comment' ng-model="workCtrl.moreInfo.w1" ng-change="workCtrl.newObject.$save()"></input>
 			</div>
 			<div>
 			  <label>Description:</label>
-			  <input class='form-control' rows="5" id='description' ng-model="infoCtrl.moreInfo.w2"></input>
+			  <input class='form-control' rows="5" id='description' ng-model="workCtrl.moreInfo.w2" ng-change="workCtrl.newObject.$save()"></input>
 			</div>
 			<div>
 			  <label for="days">Day of the Week:</label>
-			    <select class="form-control" id="days" ng-model="infoCtrl.moreInfo.w3">
+			    <select class="form-control" id="days" ng-model="workCtrl.moreInfo.w3" ng-change="workCtrl.newObject.$save()">
 					  <option>Sunday</option>
 					  <option>Monday</option>
 					  <option>Tuesday</option>
@@ -25,22 +25,23 @@
 			</div>
 		  <div>
 			  <label>Reps:</label>
-			  <input class='form-control' rows="5" id='comment' ng-model="infoCtrl.moreInfo.w4"></input>
+			  <input class='form-control' rows="5" id='comment' ng-model="workCtrl.moreInfo.w4" ng-change="workCtrl.newObject.$save()" />
 			</div>
 		  <button type="submit" ng-click="addMore()" class="btn btn-danger">Submit</button>
+			<button ng-click="updateInfo()">Update</button>
 	  </div>
 	</div>
 </div>
 <div class="container">
 	<div class="row">
 	  <table "col-sm-6 off">
-		  <tr ng-repeat="(id, info) in infoCtrl.syncObject | orderBy:'infoCtrl.moreInfo.w3'">
+		  <tr ng-repeat="(id, info) in workCtrl.newObject | orderBy:'workCtrl.moreInfo.w3'">
 			  <td class="panel-body">Workout Day: {{ info.w3 }}</td>
 			  <td class="panel-body">{{ info.w2 }}</td>
 				<td class="panel-body">{{ info.w1 }}</td>
 				<td class="panel-body">{{ info.w4 }}</td>
 			  <td>
-			  	<button ng-click="infoCtrl.syncObject.$remove(id)">x</button>
+			  	<button ng-click="workCtrl.newObject.$remove(id)">x</button>
 			  </td>	
 			  <td>
 			    <button ng-click="editInfo(info)">Edit</button>
