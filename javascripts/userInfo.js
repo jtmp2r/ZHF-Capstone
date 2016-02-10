@@ -27,19 +27,11 @@ app.controller('infoCtrl', ['$scope', '$location', '$firebaseArray', 'Auth',
 
     $scope.edit = function(info) {
         vm.editedInfo = info;
-        vm.changeInfo = angular.extend({}, vm.editedInfo);
     };
 
     $scope.saveEdit = function(info) {
-        vm.editedInfo = info;
         vm.syncObject.$save(info);
     }
-
-    // $scope.save = function(info) {  
-    //   vm.syncObject.$save(info);
-    //   vm.newInfo = {};
-    // }
-
 
 
     
