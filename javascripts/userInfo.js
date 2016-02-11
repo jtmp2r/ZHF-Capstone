@@ -8,6 +8,8 @@ app.controller('infoCtrl', ['$scope', '$location', '$firebaseArray', 'Auth',
 
     vm.syncObject = $firebaseArray(ref);
 
+    vm.newInfo = {};
+
     $scope.addInfo = function() {
         vm.syncObject.$add({
             q1: vm.newInfo.q1,
@@ -24,14 +26,6 @@ app.controller('infoCtrl', ['$scope', '$location', '$firebaseArray', 'Auth',
         vm.newInfo = {};
     };
 
-
-    $scope.edit = function(info) {
-        vm.editedInfo = info;
-    };
-
-    $scope.saveEdit = function(info) {
-        vm.syncObject.$save(info);
-    }
 
 
     

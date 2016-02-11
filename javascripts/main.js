@@ -20,7 +20,7 @@ app.config(['$routeProvider', function ($routeProvider) {
   .when('/workout', {
     templateUrl: 'partials/workout.html',
     controller: 'workCtrl as workCtrl'
-  }) 
+  })
   .otherwise({redirectTo: '/'})
 
 }]);

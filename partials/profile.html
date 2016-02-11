@@ -11,20 +11,23 @@
 			    <table>
 			    	<tr ng-repeat="(id, info) in infoCtrl.syncObject">
 			    	  <td class="panel-body">Goal: {{ info.q1 }}</td>
-			    	  <td><a href ng-click="edit(info)">Edit</a></td>
-			    	  <td><input type="text" ng-model="info.q1" ng-change="infoCtrl.syncObject.$save(info)"/></td>
-			    	</tr>  
-			    	<tr ng-repeat="(id, info) in infoCtrl.syncObject">    
-			    	  <td class="panel-body">{{ info.q2 }}</td>
-			    	  <td><a href ng-click="editNew(info)">Edit</a></td>
-			    	</tr>  
-			    	<tr ng-repeat="(id, info) in infoCtrl.syncObject">  
-			    	  <td class="panel-body">{{ info.q5 }}</td>
-			    	  <td><a href ng-click="editNew(info)">Edit</a></td>
-			    	</tr>			    	
 			    	  <td>
 			    	  	<button ng-click="infoCtrl.syncObject.$remove(id)">x</button>
 			    	  </td>
+			    	  <td ng-controller="editCtrl"><button ng-click="editNew(info)">Edit</button></td>
+			    	</tr>  
+			    	<tr ng-repeat="(id, info) in infoCtrl.syncObject">    
+			    	  <td class="panel-body">{{ info.q2 }}</td>
+			    		<td>
+			    	  	<button ng-click="infoCtrl.syncObject.$remove(id)">x</button>
+			    	  </td>  
+			    	</tr>  
+			    	<tr ng-repeat="(id, info) in infoCtrl.syncObject">  
+			    	  <td class="panel-body">{{ info.q5 }}</td>
+			    	  <td>
+			    	  	<button ng-click="infoCtrl.syncObject.$remove(id)">x</button>
+			    	  </td>  
+			    	</tr>			    		
 			    	</tr>
 			    </table>
 		    </div>
