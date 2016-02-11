@@ -5,15 +5,15 @@
 		<div class="col-sm-6 form-group">
 		  <div>
 			  <label>Workout:</label>
-			  <input class='form-control' rows="5" id='comment' ng-model="workCtrl.moreInfo.w1" ng-change="workCtrl.moreInfo.$save(info)"></input>
+			  <input class='form-control' rows="5" id='comment' ng-model="workCtrl.moreInfo.w1"></input>
 			</div>
 			<div>
 			  <label>Description:</label>
-			  <input class='form-control' rows="5" id='description' ng-model="workCtrl.moreInfo.w2" ng-change="workCtrl.moreInfo.$save(info)"></input>
+			  <input class='form-control' rows="5" id='description' ng-model="workCtrl.moreInfo.w2"></input>
 			</div>
 			<div>
 			  <label for="days">Day of the Week:</label>
-			    <select class="form-control" id="days" ng-model="workCtrl.moreInfo.w3" ng-change="workCtrl.moreInfo.$save(info)">
+			    <select class="form-control" id="days" ng-model="workCtrl.moreInfo.w3" >
 					  <option>Sunday</option>
 					  <option>Monday</option>
 					  <option>Tuesday</option>
@@ -25,10 +25,10 @@
 			</div>
 		  <div>
 			  <label>Reps:</label>
-			  <input class='form-control' rows="5" id='comment' ng-model="workCtrl.moreInfo.w4" ng-change="$save(info)"/>
+			  <input class='form-control' rows="5" id='comment' ng-model="workCtrl.moreInfo.w4" />
 			</div>
 		  <button type="submit" ng-click="addMore()" class="btn btn-danger">Submit</button>
-			<button ng-click="update(info)">Update</button>
+			<button ng-click="update(workCtrl.newObject)">Update</button>
 	  </div>
 	</div>
 
