@@ -28,7 +28,7 @@
 			  <input class='form-control' rows="5" id='comment' ng-model="workCtrl.moreInfo.w4" ng-change="$save(info)"/>
 			</div>
 		  <button type="submit" ng-click="addMore()" class="btn btn-danger">Submit</button>
-			<button ng-click="update(info)">Update</button>
+			<button ng-click="workCtrl.moreInfo.$save(info)">Update</button>
 	  </div>
 	</div>
 

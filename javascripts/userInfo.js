@@ -27,6 +27,15 @@ app.controller('infoCtrl', ['$scope', '$location', '$firebaseArray', 'Auth',
     };
 
 
+    $scope.editNew = function(info) {
+      vm.newInfo = info;
+      vm.syncObject.$save(info);
+    }
+
+    $scope.updateInfo = function(info) {
+      vm.newInfo = info;
+      vm.syncObject.$save({info});
+    };
 
     
 }]);	

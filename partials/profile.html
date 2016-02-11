@@ -3,18 +3,17 @@
 <div class="container-fluid">
   <div class="row">
 	  <div class="col-sm-6">
-	    <div class='panel panel-info'>
+	    <div class='panel panel-primary'>
 	      <div class="panel-heading" ng-repeat="info in infoCtrl.syncObject">
 	        <h3>{{ info.name }}</h3>
 	      </div>
-	      <div class="row">
-			    <table>
+			    <table class="table" border="2" >
 			    	<tr ng-repeat="(id, info) in infoCtrl.syncObject">
 			    	  <td class="panel-body">Goal: {{ info.q1 }}</td>
 			    	  <td>
 			    	  	<button ng-click="infoCtrl.syncObject.$remove(id)">x</button>
+                <input type="checkbox" ng-click="editNew(info)">Edit</input>
 			    	  </td>
-			    	  <td ng-controller="editCtrl"><button ng-click="editNew(info)">Edit</button></td>
 			    	</tr>  
 			    	<tr ng-repeat="(id, info) in infoCtrl.syncObject">    
 			    	  <td class="panel-body">{{ info.q2 }}</td>
@@ -28,13 +27,11 @@
 			    	  	<button ng-click="infoCtrl.syncObject.$remove(id)">x</button>
 			    	  </td>  
 			    	</tr>			    		
-			    	</tr>
 			    </table>
-		    </div>
 	    </div>
   	</div>
     <div class="row">
-      <div class="col-sm-3 panel panel-info">
+      <div class="col-sm-3 panel panel-primary">
         <div class="panel-heading">
 	        <h4>Biometric Results</h4>
 	      </div>  
@@ -51,3 +48,37 @@
   	</div>
   </div>	
 </div>
+<div class="row">
+	<div class="col-xs-4 form-group">
+		<label>Name</label>
+		<input type="text" class='form-control' ng-model='infoCtrl.newInfo.name'/>
+		<label>Goal</label>
+		<input type="text" class='form-control' ng-model='infoCtrl.newInfo.q1'/>
+		<label>Goal</label>
+		<input type="text" class='form-control' ng-model='infoCtrl.newInfo.q2'/>
+		<label>Goal</label>
+		<input type="text" class='form-control' ng-model='infoCtrl.newInfo.q3'/>
+		<label>Goal</label>
+		<input type="text" class='form-control' ng-model='infoCtrl.newInfo.q4'/>
+		<label>Goal</label>
+		<input type="text" class='form-control' ng-model='infoCtrl.newInfo.q5'/>
+		<label>Goal</label>
+		<input type="text" class='form-control' ng-model='infoCtrl.newInfo.q6'/>
+		<label>Goal</label>
+		<input type="text" class='form-control' ng-model='infoCtrl.newInfo.q7'/>
+		<label>Goal</label>
+		<input type="text" class='form-control' ng-model='infoCtrl.newInfo.weight'/>
+		<label>Goal</label>
+		<input type="text" class='form-control' ng-model='infoCtrl.newInfo.height'/>
+		<label>Goal</label>
+		<button ng-click="updateInfo(info)">Update</button>
+	</div>
+</div>
+
+
+
+
+
+
+
+
