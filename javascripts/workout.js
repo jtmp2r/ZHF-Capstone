@@ -26,15 +26,16 @@ app.controller('workCtrl', ['$scope', '$location', '$firebaseArray', 'Auth',
      $scope.update = function(info) {
      	  console.log(info)
      	  vm.moreInfo = info;
-        vm.newObject.$save({
-        	w1:  vm.moreInfo.w1,
-          w2:  vm.moreInfo.w2,
-          w3:  vm.moreInfo.w3,
-          w4:  vm.moreInfo.w4  
-        });
+        vm.newObject.set({info});
      };
 
    
+}]);
 
-
-}]);	
+// $scope.update = function(info) {
+//      	  console.log(info)
+//      	  info = vm.newObject.$getRecord(info);
+//         vm.newObject.$save({info}).then(function(obj) {
+//           console.log("Huh", obj)
+//         });
+//      };
