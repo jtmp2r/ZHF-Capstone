@@ -7,7 +7,7 @@
 	      <div class="panel-heading" ng-repeat="info in infoCtrl.syncObject">
 	        <h3>{{ info.name }}</h3>
 	      </div>
-			    <table class="table" border="2" >
+			    <table class="table" >
 			    	<tr ng-repeat="(id, info) in infoCtrl.syncObject">
 			    	  <td class="panel-body">Goal: {{ info.q1 }}</td>
 			    	  <td>
@@ -48,30 +48,30 @@
   	</div>
   </div>	
 </div>
+
 <div class="row">
 	<div class="col-xs-4 form-group">
-		<label>Name</label>
+		<label style="color: #b30000">Name</label>
 		<input type="text" class='form-control' ng-model='infoCtrl.newInfo.name'/>
-		<label>Goal</label>
+		<label style="color: #b30000">1</label>
 		<input type="text" class='form-control' ng-model='infoCtrl.newInfo.q1'/>
-		<label>Goal</label>
+		<label style="color: #b30000">2</label>
 		<input type="text" class='form-control' ng-model='infoCtrl.newInfo.q2'/>
-		<label>Goal</label>
+		<label style="color: #b30000">3</label>
 		<input type="text" class='form-control' ng-model='infoCtrl.newInfo.q3'/>
-		<label>Goal</label>
+		<label style="color: #b30000">4</label>
 		<input type="text" class='form-control' ng-model='infoCtrl.newInfo.q4'/>
-		<label>Goal</label>
+		<label style="color: #b30000">5</label>
 		<input type="text" class='form-control' ng-model='infoCtrl.newInfo.q5'/>
-		<label>Goal</label>
+		<label style="color: #b30000">6</label>
 		<input type="text" class='form-control' ng-model='infoCtrl.newInfo.q6'/>
-		<label>Goal</label>
+		<label style="color: #b30000">7</label>
 		<input type="text" class='form-control' ng-model='infoCtrl.newInfo.q7'/>
-		<label>Goal</label>
+		<label style="color: #b30000">Weight</label>
 		<input type="text" class='form-control' ng-model='infoCtrl.newInfo.weight'/>
-		<label>Goal</label>
+		<label style="color: #b30000">Height</label>
 		<input type="text" class='form-control' ng-model='infoCtrl.newInfo.height'/>
-		<label>Goal</label>
-		<button ng-click="updateInfo(info)">Update</button>
+		<button class="btn btn-danger" ng-click="updateInfo(info)">Update</button>
 	</div>
 </div>
 
