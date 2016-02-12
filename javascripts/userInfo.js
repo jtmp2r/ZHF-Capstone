@@ -1,12 +1,12 @@
-app.controller('infoCtrl', ['$scope', '$location', '$firebaseArray', 'Auth', 
-	function($scope, $location, $firebaseArray, Auth) {
+app.controller('infoCtrl', ['$scope', '$location', '$firebaseObject', 'Auth', 
+	function($scope, $location, $firebaseObject, Auth) {
     this.userAuthData = Auth.$getAuth();
 
 
     vm = this;
     var ref = new Firebase('https://capstone-zhf.firebaseio.com/' + this.userAuthData.uid + '/surveyInfo');
 
-    vm.syncObject = $firebaseArray(ref);
+    vm.syncObject = $firebaseObject(ref);
 
     vm.newInfo = {};
 

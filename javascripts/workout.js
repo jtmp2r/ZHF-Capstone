@@ -1,12 +1,12 @@
-app.controller('workCtrl', ['$scope', '$location', '$firebaseArray', 'Auth', 
-	function($scope, $location, $firebaseArray, Auth) {
+app.controller('workCtrl', ['$scope', '$location', '$firebaseObject', 'Auth', 
+	function($scope, $location, $firebaseObject, Auth) {
     this.userAuthData = Auth.$getAuth();
 
 
   vm = this;
   var ref = new Firebase('https://capstone-zhf.firebaseio.com/' + this.userAuthData.uid + '/workout');
 
-  vm.newObject = $firebaseArray(ref);
+  vm.newObject = $firebaseObject(ref);
 
 
    $scope.addMore = function() {
@@ -26,16 +26,8 @@ app.controller('workCtrl', ['$scope', '$location', '$firebaseArray', 'Auth',
      $scope.update = function(info) {
      	  console.log(info)
      	  vm.moreInfo = info;
-        vm.newObject.set({info});
+        vm.newObject.$save({info});
      };
 
    
 }]);
-
-// $scope.update = function(info) {
-//      	  console.log(info)
-//      	  info = vm.newObject.$getRecord(info);
-//         vm.newObject.$save({info}).then(function(obj) {
-//           console.log("Huh", obj)
-//         });
-//      };
