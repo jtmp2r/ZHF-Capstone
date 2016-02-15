@@ -1,19 +1,19 @@
 <div ng-include=" '/partials/navbar.html' "></div>
 
-<div class="container">
+<div class="container-fluid">
 	<div class="row">
-		<div class="col-sm-6 form-group">
+		<div class="col-sm-5">
 		  <div>
 			  <label>Workout:</label>
-			  <input class='form-control' rows="5" id='comment' ng-model="workCtrl.moreInfo.w1" ng-change="workCtrl.moreInfo.$save(info)"></input>
+			  <input class='form-control' ng-model="workCtrl.moreInfo.w1"></input>
 			</div>
 			<div>
 			  <label>Description:</label>
-			  <input class='form-control' rows="5" id='description' ng-model="workCtrl.moreInfo.w2" ng-change="workCtrl.moreInfo.$save(info)"></input>
+			  <input class='form-control' ng-model="workCtrl.moreInfo.w2"</input>
 			</div>
 			<div>
 			  <label for="days">Day of the Week:</label>
-			    <select class="form-control" id="days" ng-model="workCtrl.moreInfo.w3" ng-change="workCtrl.moreInfo.$save(info)">
+			    <select class="form-control" ng-model="workCtrl.moreInfo.w3">
 					  <option>Sunday</option>
 					  <option>Monday</option>
 					  <option>Tuesday</option>
@@ -25,28 +25,28 @@
 			</div>
 		  <div>
 			  <label>Reps:</label>
-			  <input class='form-control' rows="5" id='comment' ng-model="workCtrl.moreInfo.w4" ng-change="$save(info)"/>
+			  <input class='form-control' ng-model="workCtrl.moreInfo.w4"/>
 			</div>
 		  <button type="submit" ng-click="addMore()" class="btn btn-danger">Submit</button>
-			<button ng-click="workCtrl.moreInfo.$save(info)">Update</button>
+			<button class="btn btn-danger" ng-click="workCtrl.moreInfo.$save(info)">Update</button>
 	  </div>
 	</div>
 
 	<div class="row">
-	  <table "col-sm-6 off">
-		  <tr ng-repeat="(id, info) in workCtrl.newObject | orderBy:'workCtrl.moreInfo.w3'">
-			  <td class="panel-body">Workout Day: {{ info.w3 }}</td>
-			  <td class="panel-body">{{ info.w2 }}</td>
-				<td class="panel-body">{{ info.w1 }}</td>
-				<td class="panel-body">{{ info.w4 }}</td>
-			  <td>
-			  	<button ng-click="workCtrl.newObject.$remove(id)">x</button>
-			  </td>	
-			  <td>
-			    <button ng-click="editInfo(info)">Edit</button>
-			  </td>
-			</tr>
-		</table>
-	</div>
-
+		  <table class="table-condensed">
+		    <h3>Workouts</h3>
+			  <tr ng-repeat="(id, info) in workCtrl.newObject | orderBy:'workCtrl.moreInfo.w3'">
+				  <td class="panel-body">Day: {{ info.w3 }}</td>
+				  <td class="panel-body">{{ info.w2 }}</td>
+					<td class="panel-body">{{ info.w1 }}</td>
+					<td class="panel-body">{{ info.w4 }}</td>
+				  <td>
+				  	<button ng-click="workCtrl.newObject.$remove(id)">x</button>
+				  </td>	
+				  <td>
+				    <button ng-click="editInfo(info)">Edit</button>
+				  </td>
+				</tr>
+			</table>
+	</div>	
 </div>	
