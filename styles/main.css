@@ -43,3 +43,12 @@ body {
 #para {
 	padding-left: 50px;
 }
+
+table {
+	table-layout: fixed;
+	width: 50%;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+
