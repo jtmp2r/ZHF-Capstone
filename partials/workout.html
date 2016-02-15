@@ -9,15 +9,6 @@
 			</div>
 			<div>
 			  <label>Description:</label>
-			  <input class='form-control' rows="5" id='description' ng-model="workCtrl.moreInfo.w2"></input>
-			</div>
-			<div>
-			  <label for="days">Day of the Week:</label>
-			    <select class="form-control" id="days" ng-model="workCtrl.moreInfo.w3" >
-			  <input class='form-control' ng-model="workCtrl.moreInfo.w1"></input>
-			</div>
-			<div>
-			  <label>Description:</label>
 			  <input class='form-control' ng-model="workCtrl.moreInfo.w2"</input>
 			</div>
 			<div>
@@ -36,14 +27,8 @@
 			  <label>Reps:</label>
 			  <input class='form-control' rows="5" id='comment' ng-model="workCtrl.moreInfo.w4" />
 			</div>
-		  <button type="submit" ng-click="addMore()" class="btn btn-danger">Submit</button>
-			<button ng-click="update(workCtrl.newObject)">Update</button>
-			  <input class='form-control' ng-model="workCtrl.moreInfo.w4"/>
-			</div>
-		  <button type="submit" ng-click="addMore()" class="btn btn-danger">Submit</button>
-			<button class="btn btn-danger" ng-click="workCtrl.moreInfo.$save(info)">Update</button>
 		  <button type="submit" ng-click="workCtrl.addMore()" class="btn btn-danger">Submit</button>
-			<button ng-click="workCtrl.update(workCtrl.newObject)">Update</button>
+			<button class="btn btn-danger" ng-click="workCtrl.update(workCtrl.newObject)">Update</button>
 	  </div>
 	</div>
 
@@ -56,27 +41,12 @@
 					<td class="panel-body">{{ info.w1 }}</td>
 					<td class="panel-body">{{ info.w4 }}</td>
 				  <td>
-				  	<button ng-click="workCtrl.newObject.$remove(id)">x</button>
+				  	<button ng-click="workCtrl.remove(id)">x</button>
 				  </td>	
 				  <td>
-				    <button ng-click="editInfo(info)">Edit</button>
+				    <button ng-click="workCtrl.editInfo(info)">Edit</button>
 				  </td>
 				</tr>
 			</table>
 	</div>	
-	  <table "col-sm-6 off">
-		  <tr ng-repeat="(id, info) in workCtrl.newObject | orderBy:'workCtrl.moreInfo.w3'">
-			  <td class="panel-body">Workout Day: {{ info.w3 }}</td>
-			  <td class="panel-body">{{ info.w2 }}</td>
-				<td class="panel-body">{{ info.w1 }}</td>
-				<td class="panel-body">{{ info.w4 }}</td>
-			  <td>
-			  	<button ng-click="workCtrl.remove(id)">x</button>
-			  </td>	
-			  <td>
-			    <button ng-click="workCtrl.editInfo(info)">Edit</button>
-			  </td>
-			</tr>
-		</table>
-	</div>
 </div>	

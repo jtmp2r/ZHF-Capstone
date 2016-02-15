@@ -10,6 +10,7 @@ app.controller('workCtrl', ['$location', '$firebaseObject', '$firebaseArray', 'A
   vm.newArray = $firebaseArray(ref);
 
 
+
   vm.addMore = function() {
         vm.newArray.$add({
           w1:  vm.moreInfo.w1,
@@ -20,10 +21,9 @@ app.controller('workCtrl', ['$location', '$firebaseObject', '$firebaseArray', 'A
         vm.moreInfo = {};
     };
 
-    vm.remove =  function(info) {    
+    vm.remove =  function(info) {
       vm.newObject.$remove(info);
     }  
-
 
     vm.editInfo = function(info) {
         vm.moreInfo = info;
@@ -32,6 +32,6 @@ app.controller('workCtrl', ['$location', '$firebaseObject', '$firebaseArray', 'A
      vm.update = function(info) {
         vm.moreInfo = info;
         vm.newObject.$save({info}); 
-     };
+    };
 
 }]);
