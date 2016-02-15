@@ -12,20 +12,20 @@
 			    	<tr ng-repeat="(id, info) in infoCtrl.syncObject">
 			    	  <td class="panel-body">Goal: {{ info.q1 }}</td>
 			    	  <td>
-			    	  	<button ng-click="infoCtrl.syncObject.$remove(id)">x</button>
+			    	  	<button ng-click="infoCtrl.remove(info)">x</button>
 			    	  </td>
-			    	  <td><button ng-click="editNew(info)">Edit</button></td>
+			    	  <td><button ng-click="infoCtrl.editNew(info)">Edit</button></td>
 			    	</tr>  
 			    	<tr ng-repeat="(id, info) in infoCtrl.syncObject">    
 			    	  <td class="panel-body">{{ info.q2 }}</td>
 			    		<td>
-			    	  	<button ng-click="infoCtrl.syncObject.$remove(id)">x</button>
+			    	  	<button ng-click="infoCtrl.remove(info)">x</button>
 			    	  </td>  
 			    	</tr>  
 			    	<tr ng-repeat="(id, info) in infoCtrl.syncObject">  
 			    	  <td class="panel-body">{{ info.q5 }}</td>
 			    	  <td>
-			    	  	<button ng-click="infoCtrl.syncObject.$remove(id)">x</button>
+			    	  	<button ng-click="infoCtrl.remove(info)">x</button>
 			    	  </td>  
 			    	</tr>			    		
 			    	</tr>

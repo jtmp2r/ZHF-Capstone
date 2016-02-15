@@ -30,7 +30,7 @@ app.controller('authCtrl', ['$scope', '$location', '$firebaseAuth', "Auth",
 		}).catch(function(error) {
 			console.error("Something's amiss:", error);
 		});
-	}; // login
+	};
 
  
 
@@ -43,13 +43,3 @@ app.controller('authCtrl', ['$scope', '$location', '$firebaseAuth', "Auth",
   }
 }]);
  
-
-	// $scope.googleLogin = function() {
-	// 	$scope.authObj.$authWithOAuthPopup("google").then(function(authData) {
-	//   console.log("Logged in as:", authData.uid);
-	//   // $rootScope.user = authData;
-	// 	}).catch(function(error) {
-	// 	  console.error("Authentication failed:", error);
-	// 	});
-	// 	$location.path('/welcome')
-	// }

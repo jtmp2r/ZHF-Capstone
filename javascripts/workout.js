@@ -1,5 +1,5 @@
-app.controller('workCtrl', ['$scope', '$location', '$firebaseObject', '$firebaseArray', 'Auth', 
-	function($scope, $location, $firebaseObject, $firebaseArray, Auth) {
+app.controller('workCtrl', ['$location', '$firebaseObject', '$firebaseArray', 'Auth', 
+	function($location, $firebaseObject, $firebaseArray, Auth) {
     this.userAuthData = Auth.$getAuth();
 
 
@@ -10,7 +10,7 @@ app.controller('workCtrl', ['$scope', '$location', '$firebaseObject', '$firebase
   vm.newArray = $firebaseArray(ref);
 
 
-  $scope.addMore = function() {
+  vm.addMore = function() {
         vm.newArray.$add({
           w1:  vm.moreInfo.w1,
           w2:  vm.moreInfo.w2,
@@ -18,13 +18,18 @@ app.controller('workCtrl', ['$scope', '$location', '$firebaseObject', '$firebase
           w4:  vm.moreInfo.w4             
         });
         vm.moreInfo = {};
-    }; 
+    };
 
-    $scope.editInfo = function(info) {
+    vm.remove =  function(info) {    
+      vm.newObject.$remove(info);
+    }  
+
+
+    vm.editInfo = function(info) {
         vm.moreInfo = info;
     };
     
-     $scope.update = function(info) {
+     vm.update = function(info) {
         vm.moreInfo = info;
         vm.newObject.$save({info}); 
      };

@@ -11,7 +11,7 @@ app.controller('infoCtrl', ["$scope", '$location', '$firebaseObject', '$firebase
 
     vm.newInfo = {};
 
-    $scope.addInfo = function() {
+    vm.addInfo = function() {
         vm.syncArray.$add({
             q1: vm.newInfo.q1,
             q2: vm.newInfo.q2,
@@ -28,14 +28,18 @@ app.controller('infoCtrl', ["$scope", '$location', '$firebaseObject', '$firebase
     };
 
 
-    $scope.editNew = function(info) {
+    vm.editNew = function(info) {
       vm.newInfo = info;
     }
 
-     $scope.update = function(info) {
-        vm.moreInfo = info;
+     vm.update = function(info) {
+        vm.newInfo = info;
         vm.syncObject.$save({info}); 
      };
+
+    vm.remove =  function(info) {    
+      vm.syncObject.$remove(info);
+    }   
 
     
 }]);	

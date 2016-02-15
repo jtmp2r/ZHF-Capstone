@@ -27,8 +27,8 @@
 			  <label>Reps:</label>
 			  <input class='form-control' rows="5" id='comment' ng-model="workCtrl.moreInfo.w4" />
 			</div>
-		  <button type="submit" ng-click="addMore()" class="btn btn-danger">Submit</button>
-			<button ng-click="update(workCtrl.newObject)">Update</button>
+		  <button type="submit" ng-click="workCtrl.addMore()" class="btn btn-danger">Submit</button>
+			<button ng-click="workCtrl.update(workCtrl.newObject)">Update</button>
 	  </div>
 	</div>
 
@@ -39,12 +39,11 @@
 			  <td class="panel-body">{{ info.w2 }}</td>
 				<td class="panel-body">{{ info.w1 }}</td>
 				<td class="panel-body">{{ info.w4 }}</td>
-				<td class="panel-body">{{ id }}</td>
 			  <td>
-			  	<button ng-click="workCtrl.newObject.$remove(id)">x</button>
+			  	<button ng-click="workCtrl.remove(id)">x</button>
 			  </td>	
 			  <td>
-			    <button ng-click="editInfo(info)">Edit</button>
+			    <button ng-click="workCtrl.editInfo(info)">Edit</button>
 			  </td>
 			</tr>
 		</table>
