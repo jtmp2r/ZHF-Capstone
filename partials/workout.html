@@ -42,6 +42,8 @@
 			</div>
 		  <button type="submit" ng-click="addMore()" class="btn btn-danger">Submit</button>
 			<button class="btn btn-danger" ng-click="workCtrl.moreInfo.$save(info)">Update</button>
+		  <button type="submit" ng-click="workCtrl.addMore()" class="btn btn-danger">Submit</button>
+			<button ng-click="workCtrl.update(workCtrl.newObject)">Update</button>
 	  </div>
 	</div>
 
@@ -62,4 +64,19 @@
 				</tr>
 			</table>
 	</div>	
+	  <table "col-sm-6 off">
+		  <tr ng-repeat="(id, info) in workCtrl.newObject | orderBy:'workCtrl.moreInfo.w3'">
+			  <td class="panel-body">Workout Day: {{ info.w3 }}</td>
+			  <td class="panel-body">{{ info.w2 }}</td>
+				<td class="panel-body">{{ info.w1 }}</td>
+				<td class="panel-body">{{ info.w4 }}</td>
+			  <td>
+			  	<button ng-click="workCtrl.remove(id)">x</button>
+			  </td>	
+			  <td>
+			    <button ng-click="workCtrl.editInfo(info)">Edit</button>
+			  </td>
+			</tr>
+		</table>
+	</div>
 </div>	
